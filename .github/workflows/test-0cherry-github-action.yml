@@ -12,5 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: "actions/checkout@v2"
-      - uses: 0cherry/0cherry-github-action@master
+      - name: "add actions test"
+        uses: 0cherry/0cherry-github-action@master
+        id: test
