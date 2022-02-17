@@ -12,5 +12,4 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'add action'
-        uses: 0cherry/0cherry-github-action@master
+      - uses: 0cherry/0cherry-github-action@master
