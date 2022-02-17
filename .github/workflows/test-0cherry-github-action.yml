@@ -1,0 +1,15 @@
+# /.github/workflows/test-0cherry-github-action.yml
+name: Github Action Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test-github-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: 0cherry/0cherry-github-action/checkout@v2
