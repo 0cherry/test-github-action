@@ -8,10 +8,10 @@ on:
     branches: [ master ]
 
 jobs:
-  test-github-action:
+  my-action:
     runs-on: ubuntu-latest
 
     steps:
       - name: "add actions test"
-        uses: 0cherry/0cherry-github-action@master
-        id: test
+      - uses: 0cherry/0cherry-github-action@master
+      - id: test
