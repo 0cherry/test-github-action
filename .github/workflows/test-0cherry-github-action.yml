@@ -15,3 +15,4 @@ jobs:
       - name: "add actions test"
       - uses: 0cherry/0cherry-github-action@master
       - id: test
+        run: echo "run github action"
