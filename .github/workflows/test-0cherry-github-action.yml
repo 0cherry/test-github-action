@@ -14,10 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
       - name: Do my action & create report file
         uses: 0cherry/0cherry-github-action@master
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          target: ${{ github.ref }}
+          # token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ github.token }}
       
