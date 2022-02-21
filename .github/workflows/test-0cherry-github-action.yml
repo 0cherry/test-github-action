@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
       - name: Do my action & create report file
         uses: 0cherry/0cherry-github-action@master
         with:
