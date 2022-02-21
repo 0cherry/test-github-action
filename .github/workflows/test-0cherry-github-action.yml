@@ -17,6 +17,6 @@ jobs:
       - name: Do my action & create report file
         uses: 0cherry/0cherry-github-action@master
         with:
-          # token: ${{ secrets.GITHUB_TOKEN }}
-          token: ${{ github.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # token: ${{ github.token }}
       
