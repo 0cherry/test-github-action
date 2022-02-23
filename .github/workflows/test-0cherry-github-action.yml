@@ -21,6 +21,8 @@ jobs:
           echo $GITHUB_WORKSPACE
       - name: Checkout my repo
         uses: actions/checkout@v2
+        with:
+          path: custom_repo
       - name: run ls pwd
         run: |
           echo $(pwd)
