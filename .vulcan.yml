@@ -1,0 +1,34 @@
+--- # Start
+name: spec_command
+
+# 유저의 github 저장소 정보
+url: https://github.com/danmar/cppcheck.git
+
+docker-image: vulcan:ubuntu-20.04 # 미리 빌드한 도커 이미지 설정 / 해당 이미지에 MSV 추가하도록
+
+# predefined docker-image를 사용하되, 추가적인 설정이 필요한 경우 이렇게 정의
+extra-build-env-setting-commands: |
+  apt update
+  apt install -y libsqlite3-dev texinfo
+
+test-build-command: | # 테스트 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요
+  cmake -DCMAKE_BUILD_TYPE=Debug -S . -B build -G Ninja
+  cmake --build build --target clean
+  cmake --build build --target all
+
+coverage-build-command: | # 커버리지 빌드 커맨드 / defect4cpp 기준 meta.json의 내용이 필요(SBFL: gcov)
+  cmake -DCMAKE_C_FLAGS=\"--coverage -g -O0\" -DCMAKE_C_OUTPUT_EXTENSION_REPLACE=ON -DCMAKE_BUILD_TYPE=Debug -S . -B build -G Ninja
+  cmake --build build --target clean
+  cmake --build build --target all
+
+# 테스트 type이 문제: gtest의 경우 원하는 테스트를 실행할 수 있으니 문제가 없음
+# 그렇지 않으면 test-case에 실행할 테스트 번호를 range로 하도록함
+# 테스트 실행 역시 range안에 있는 테스트들만 실행하도록 묶어서 command를 부르거나 여러번 불러야함
+test-type: custom
+test-case: [0-5, 8-10]
+
+test-command: | # 테스트 실행
+  test-driver @test-case@
+
+test-coverage-command: | # 커버리지 테스트 실행
+  coverage-test-driver @test-case@
