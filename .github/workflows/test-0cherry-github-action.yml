@@ -2,12 +2,7 @@
 name: Github Action Test
 
 on:
-  push:
-    branches: [ master ]
-#  pull_request:
-#    branches: [ master ]
-#  schedule:
-#    - cron: "30 * * * 1-5"
+  push
 
 jobs:
   vulcan:
@@ -16,11 +11,5 @@ jobs:
     steps:
       - name: Test vulcan action
         uses: Suresoft-GLaDOS/vulcan-action@main
-        # uses: 0cherry/0cherry-github-action@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Check some commands
-        run: |
-          echo $(pwd)
-          echo $(ls)
-          echo $GITHUB_WORKSPACE
