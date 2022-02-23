@@ -20,6 +20,7 @@ jobs:
         run: |
           echo $(pwd)
           echo $(ls)
+          echo $GITHUB_WORKSPACE
       - name: Do my action & create report file
         uses: 0cherry/0cherry-github-action@master
         with:
@@ -29,3 +30,4 @@ jobs:
         run: |
           echo $(pwd)
           echo $(ls)
+          echo $GITHUB_WORKSPACE
