@@ -14,25 +14,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: run ls pwd
-        run: |
-          echo $(pwd)
-          echo $(ls)
-          echo $GITHUB_WORKSPACE
-      - name: Checkout my repo
-        uses: actions/checkout@v2
-        with:
-          path: custom_repo
-      - name: run ls pwd
-        run: |
-          echo $(pwd)
-          echo $(ls)
-          echo $GITHUB_WORKSPACE
-      - name: Do my action & create report file
-        uses: 0cherry/0cherry-github-action@master
+      - name: Test vulcan action
+        uses: Suresoft-GLaDOS/vulcan-action@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          # token: ${{ github.token }}
       - name: run ls pwd
         run: |
           echo $(pwd)
