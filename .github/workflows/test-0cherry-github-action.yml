@@ -16,9 +16,16 @@ jobs:
     steps:
       - name: Checkout my repo
         uses: actions/checkout@v2
+      - name: run ls pwd
+        run: |
+          echo $(pwd)
+          echo $(ls)
       - name: Do my action & create report file
         uses: 0cherry/0cherry-github-action@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           # token: ${{ github.token }}
-      
+      - name: run ls pwd
+        run: |
+          echo $(pwd)
+          echo $(ls)
