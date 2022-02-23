@@ -15,8 +15,8 @@ jobs:
 
     steps:
       - name: Test vulcan action
-        # uses: Suresoft-GLaDOS/vulcan-action@main
-        uses: 0cherry/0cherry-github-action@master
+        uses: Suresoft-GLaDOS/vulcan-action@main
+        # uses: 0cherry/0cherry-github-action@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Check some commands
