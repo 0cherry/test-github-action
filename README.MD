@@ -1,1 +1,1 @@
-test 0cherry/0cherry-github-action
+test Suresoft-GLaDOS/vulcan-action
