@@ -10,6 +10,6 @@ jobs:
 
     steps:
       - name: Test vulcan action
-        uses: Suresoft-GLaDOS/vulcan-action@main
+        uses: Suresoft-GLaDOS/vulcan-action@test
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
